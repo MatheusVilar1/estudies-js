@@ -1,5 +1,5 @@
 /*
- * Essa é uma calculadora bem legal!!!
+ *calculadora!!!
  */
 const Calculadora = {
     _resultado: 0,
