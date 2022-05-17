@@ -12,7 +12,10 @@ const antes2 = cb =>{
     return cb()
 }
 function copiar(cb){
-    console.log('Tarefa de copiar!!')
+    gulp.src(['pastaA/**/*.txt']) //usar arquivos de entrada
+        .pipe(gulp.dest('pastaB'))   //posso colocar transformações na minha aplicação
+        //.pipe()   //alterar outra pipe and filters
+
     return cb()
 }
 const fim = cb =>{
