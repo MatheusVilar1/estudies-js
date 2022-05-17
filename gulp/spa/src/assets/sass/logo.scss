@@ -4,11 +4,12 @@ aside.logo {
 
 aside.logo a {
     display: block;
-    padding: 22px 15px;
+    
+    padding: 5px 50px;
 }
 
 aside.logo img {
-    width: 100%;
+    width: 50%;
 }
 
 @media(max-width: $largura-sm-max) {
