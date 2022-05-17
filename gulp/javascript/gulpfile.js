@@ -6,6 +6,10 @@ const babel = require('gulp-babel')
 
 function transformacaoJS(cb) {
     return gulp.src('src/**/*.js')
+        .pipe(babel({
+            comments: false,
+            presets: ["env"]
+        }))
         .pipe(uglify())
         .on('error', err => console.log(err))
         .pipe(concat('code.min.js'))
