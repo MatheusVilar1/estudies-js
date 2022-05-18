@@ -13,6 +13,12 @@ module.exports = {
         path:__dirname +'/public'
 
     },
+    devServer:{
+        static: {
+            directory: './public',
+          },
+        port:9000
+    },
     optimization:{
         minimizer:[
             new CssMinimizerPlugin(),
