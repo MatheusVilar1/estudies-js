@@ -1,16 +1,35 @@
+const modoDev = process.env.NODE_ENV !=="production"
 const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+
+
 module.exports = {
-    mode:'development', //production(padrão) => gera uma unica linha, sem comments
+    mode:modoDev?'development':'production', //production(padrão) => gera uma unica linha, sem comments
     entry:'./src/principal.js',
     output:{
         filename:'principal.js',
         path:__dirname +'/public'
 
     },
+    optimization:{
+        minimizer:[
+            new CssMinimizerPlugin(),
+
+            
+        ]
+    },
     plugins:[
         new MiniCssExtractPlugin({
-            filename:'estilo.css'})
+            filename:'estilo.css'}),
+            new TerserPlugin({
+                parallel: true,
+                terserOptions: {
+                    ecma: 6,
+                },
+            }),
+            
     ],
     module:{
         rules:[{
