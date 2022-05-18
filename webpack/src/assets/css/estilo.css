@@ -1,4 +1,7 @@
 body{
     background-color: red;
+    background-image:url(../img/logo.png);
+    background-repeat : no-repeat;
+    background-position: center;
 }
 
